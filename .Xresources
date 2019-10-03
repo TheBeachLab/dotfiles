@@ -1,0 +1,62 @@
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use !
+
+!! Colorscheme modify at https://terminal.sexy
+
+! special
+*.foreground:   #8a8986
+*.background:   #28211c
+*.cursorColor:  #8a8986
+
+! black
+*.color0:       #28211c
+*.color8:       #666666
+
+! red
+*.color1:       #cf6a4c
+*.color9:       #cf6a4c
+
+! green
+*.color2:       #a7e160
+*.color10:      #bde18b
+
+! yellow
+*.color3:       #f9ee98
+*.color11:      #f9ee98
+
+! blue
+*.color4:       #5ea6ea
+*.color12:      #5ea6ea
+
+! magenta
+*.color5:       #9b859d
+*.color13:      #9b859d
+
+! cyan
+*.color6:       #afc4db
+*.color14:      #afc4db
+
+! white
+*.color7:       #8a8986
+*.color15:      #baae9e
+
+!! UXTerm Appearance
+UXTerm*termName: xterm-256color
+UXTerm*saveLines: 100000
+UXTerm*colorBDMode: true
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+Xcursor.theme: Bibata_Ice
