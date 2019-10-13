@@ -12,7 +12,7 @@ alias lsal='ls -alh'
 alias lsla='lsal'
 alias pacup='sudo pacman -Syu'
 alias yayup='yay -Syu'
-alias wifi='sudo wifi-menu'
+alias online='sudo wifi-menu'
 
 alias df='df -H'
 
