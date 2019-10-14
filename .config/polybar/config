@@ -253,7 +253,7 @@ label-connected = %essid% %signal%Mbps
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected = WLAN disconnected
+label-disconnected = WLAN off
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
@@ -271,7 +271,7 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %linkspeed%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
