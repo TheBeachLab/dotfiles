@@ -12,9 +12,14 @@ alias lsal='ls -alh'
 alias lsla='lsal'
 alias pacup='sudo pacman -Syu'
 alias yayup='yay -Syu'
+
+# network
 alias online='sudo wifi-menu'
+alias cable='sudo ip link set cable0 up && sudo dhcpcd cable0'
+alias nocable='sudo systemctl stop dhcpcd.service && sudo ip link set cable0 down'
 
 alias df='df -H'
+
 
 # dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

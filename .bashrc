@@ -14,8 +14,17 @@ RESET="\033[0m"
 
 PS1="\[${RED}\][\[${RESET}\]\u \[${YELLOW}\]\w\[${RED}\]]\[${RESET}\]\$ "
 
+# Xterm transparency
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+
 # Load aliases
 source ~/.bash_aliases
+
+# Powerline
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. /usr/share/powerline/bindings/bash/powerline.sh
 
 # Colorgrid
 function colorgrid( )

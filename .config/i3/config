@@ -38,7 +38,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec uxterm -b 10 -bdc
+bindsym $mod+Return exec uxterm -b 5 -bdc
 
 # start chrome
 bindsym Control+$mod+b exec firefox
@@ -68,13 +68,25 @@ bindsym Control+$mod+d exec xdg-open "$(locate ~ | rofi -dmenu -theme Indego -fo
 ##########
 
 # general settings
-for_window [class="UXTerm"] border pixel 0
-for_window [class="firefox"] border pixel 0
-for_window [class="Thunar"] border pixel 0
+for_window [class="^.*"] border pixel 0
+#for_window [class="UXTerm"] border pixel 0
+#for_window [class="firefox"] border pixel 0
+#for_window [class="Thunar"] border pixel 0
+#for_window [class="Ntcardvt"] border pixel 0
+#for_window [class="Blender"] border pixel 0
 hide_edge_borders both
 smart_borders on
 gaps inner 12
 gaps outer 0
+
+# floating windows
+for_window [class="QjackCtl"] floating enable, resize set 622px 109px
+for_window [window_role="pop-up"] floating enable
+for_window [class="Aeolus"] floating enable
+for_window [instance="vmpk"] floating enable
+for_window [class="Cadence"] floating enable
+#for_window [class="QjackCtl" title="JACK Audio Connection Kit [(default)] Stopped. — QjackCtl"] floating enable, resize set 622px 109px
+
 
 # move focused window between monitors
 bindsym $mod+l move container to output right
@@ -210,8 +222,8 @@ bindsym $mod+p workspace next
 ###############
 
 # Screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1%
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1%
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 
 # Sound control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
@@ -219,9 +231,9 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Screenshot
-bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots'
-bindsym Control+Print exec scrot -u -e 'mv $f ~/Pictures/screenshots'
-#bindsym Shift+Print exec scrot -s -e 'mv $f ~/Pictures/screenshots'
+bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots' && dunstify 'Captured screen to ~/Pictures/screenshots'
+bindsym Control+Print exec scrot -u -e 'mv $f ~/Pictures/screenshots' && dunstify 'Captured focused window to ~/Pictures/screenshots'
+bindsym Shift+Print exec scrot -e 'mv $f ~/Pictures/screenshots && gthumb ~/Pictures/screenshots/$f'
 
 # keyboard layout
 bindsym $mod+z exec xkb-switch -n # REQUIRES AUR XKB-SWITCH
@@ -245,6 +257,9 @@ bindsym $mod+Shift+x exec ~/scripts/lock-screen
 ######################
 # Auto-start programs
 ######################
+# start jack
+exec cadence-session-start --system-start
+
 # Load .Xresources
 #exec xrdb ~/.Xresources
 
@@ -252,10 +267,10 @@ bindsym $mod+Shift+x exec ~/scripts/lock-screen
 exec setxkbmap -layout us,es
 
 # Wallpaper
-exec_always feh --bg-scale ~/scripts/spacesurf.png
+exec feh --bg-scale ~/scripts/spacesurf.png
 
 # Transparency
-exec_always compton -o 0.3 --backend glx --vsync -b -i 1.0 --config ~/.config/i3/compton.conf
+exec compton -o 0.3 --backend glx --vsync -b -i 1.0 --config ~/.config/i3/compton.conf
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -267,7 +282,7 @@ exec --no-startup-id dunst -conf ~/.dunst/dunstrc
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
 # Fix cursor
-exec_always --no-startup-id fix_xcursor
+exec --no-startup-id fix_xcursor
 
 # Battery Popup
 exec --no-startup-id i3-battery-popup -n
@@ -283,8 +298,8 @@ exec --no-startup-id i3-battery-popup -n
 #exec --no-startup-id udiskie --tray
 
 # Terminal
-exec --no-startup-id uxterm -b 10 -e "neofetch --ascii_bold off; $SHELL"
-exec --no-startup-id uxterm -b 10
+exec --no-startup-id uxterm -b 5 -e "neofetch --ascii_bold off; $SHELL"
+exec --no-startup-id uxterm -b 5
 
 # Network Manager applet
 #exec --no-startup-id nm-applet

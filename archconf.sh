@@ -18,6 +18,7 @@ do
     echo '7 Configure vconsole ...... /etc/vconsole.conf'
     echo '8 Configure Xresources .... ~/.Xresources'
     echo '9 Configure bashrc ........ ~/.bashrc'
+    echo '10 Configure vimrc ........ ~/.vimrc'
     echo ""
     echo "s Configure this script ... ~/archconf.sh"
     echo ""
@@ -26,19 +27,20 @@ do
     echo -e "\e[33mEnter your selection \e[0m\c"
     read answer
     case "$answer" in
-        1) nano ~/.config/i3/config ;;
-        2) nano ~/.config/polybar/config ;;
-        3) sudo nano /etc/ly/config.ini ;;
-        4) sudo nano /etc/default/grub
+        1) vim ~/.config/i3/config ;;
+        2) vim ~/.config/polybar/config ;;
+        3) sudo vim /etc/ly/config.ini ;;
+        4) sudo vim /etc/default/grub
            sudo update-grub ;;
-        5) sudo nano /etc/systemd/logind.conf ;;
-        6) nano ~/.xinitrc ;;
-        7) sudo nano /etc/vconsole.conf ;;
-        8) nano ~/.Xresources
+        5) sudo vim /etc/systemd/logind.conf ;;
+        6) vim ~/.xinitrc ;;
+        7) sudo vim /etc/vconsole.conf ;;
+        8) vim ~/.Xresources
            xrdb ~/.Xresources ;;
-        9) nano ~/.bashrc
+        9) vim ~/.bashrc
            source ~/.bashrc ;;
-        s) nano ~/archconf.sh ;;
+        10) vim ~/.vimrc ;;
+        s) vim ~/archconf.sh ;;
         q) clear
            exit ;;
     esac

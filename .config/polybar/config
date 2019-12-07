@@ -31,7 +31,7 @@ alertm2 =
 backgroundm2 = 
 
 [bar/archbar]
-monitor = ${env:MONITOR:eDP1}
+;monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 27
 ;offset-x = 0 ;was 1
@@ -60,7 +60,7 @@ font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio xbacklight filesystem xkeyboard memory cpu wlan eth battery temperature date updates powermenu
+modules-right = alsa  backlight filesystem xkeyboard memory cpu wlan eth battery temperature date updates powermenu
 
 tray-position = right
 tray-padding = 2
@@ -149,6 +149,18 @@ label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
+
+ws-icon-0 = 10;
+ws-icon-1 = 1;
+ws-icon-2 = 2;
+ws-icon-3 = 3;
+ws-icon-4 = 4;
+ws-icon-5 = 5;
+ws-icon-6 = 6;
+ws-icon-7 = 7;
+ws-icon-8 = 8;
+ws-icon-9 = 9;
+
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
@@ -156,6 +168,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
+label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
@@ -197,12 +210,11 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-[module/xbacklight]
-type = internal/xbacklight
+[module/backlight]
+type = internal/backlight
 
-; XRandR output to get get values from
-; Default: the monitor defined for the running bar
-output = eDP1
+; for internal/backlight module, read only
+card = intel_backlight
 
 format = <label> <bar>
 label = BL
@@ -217,11 +229,6 @@ bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
@@ -252,8 +259,8 @@ label-connected = %essid% %signal%Mbps
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-label-disconnected = WLAN off
+label-disconnected = %ifname% down
+;label-disconnected = WLAN off
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
@@ -271,13 +278,15 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %linkspeed%
+label-connected = %linkspeed%  %downspeed%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;format-disconnected =
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.foreground-alt}
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% down
+label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/screenrecorder]
 type = custom/script
@@ -354,7 +363,8 @@ label = %time% %date%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+;sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+sink = jack_out
 
 use-ui-max = true
 
@@ -394,9 +404,9 @@ type = internal/alsa
 ; Soundcard to be used
 ; Usually in the format hw:# where # is the card number
 ; You can find the different card numbers in `/proc/asound/cards`
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
+master-soundcard = hw:0
+speaker-soundcard = hw:0
+headphone-soundcard = hw:0
 
 ; Name of the master, speaker and headphone mixers
 ; Use the following command to list available mixer controls:
@@ -419,15 +429,26 @@ headphone-mixer = Headphone
 ; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
 ; You may also need to use `amixer -c # controls` as above for the mixer names
 ; Default: none
-headphone-id = 9
+headphone-id = 1
+
+; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+; Default: false
+mapped = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume =  VOL %percentage:2%%
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = Audio Muted
+label-muted-foreground = #dfdfdf
+label-muted-background = ${colors.secondary}
+label-muted-padding = 2
+label-muted-margin = 1
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -437,7 +458,7 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
@@ -490,9 +511,8 @@ ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 ; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 1000
 
