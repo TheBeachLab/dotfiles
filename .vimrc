@@ -18,6 +18,18 @@ set incsearch         " search as characters are entered
 set hlsearch          " highlight matches
 set ic                " case insensitive search
 
+" Specify a directory for plugins
+call plug#begin('~/.vim/bundle')
+Plug 'jamessan/vim-gnupg'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'ap/vim-css-color'
+call plug#end()
+
 " key remaps
 noremap <SPACE> <C-F> " space to scroll down
 
@@ -37,7 +49,9 @@ abb tabl The (awesome) Beach Lab
 let g:powerline_pycmd="py3"
 set laststatus=2
 
-" Armor files
+" GPG options
 let g:GPGPreferArmor=1
 " set the default option
 let g:GPGDefaultRecipients=["me@beachlab.org"]
+
+
