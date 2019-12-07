@@ -12,6 +12,7 @@ alias lsal='ls -alh'
 alias lsla='lsal'
 alias pacup='sudo pacman -Syu'
 alias yayup='yay -Syu'
+alias vi='vim'
 
 # network
 alias online='sudo wifi-menu'
