@@ -26,9 +26,15 @@ source ~/.bash_aliases
 #POWERLINE_BASH_SELECT=1
 #. /usr/share/powerline/bindings/bash/powerline.sh
 
+# GPG
+GPG_TTY=`tty`
+export GPG_TTY
+
+
 # Colorgrid
 function colorgrid( )
 {
+
     iter=16
     while [ $iter -lt 52 ]
     do

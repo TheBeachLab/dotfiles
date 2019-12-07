@@ -36,3 +36,8 @@ abb tabl The (awesome) Beach Lab
 " powerline settings
 let g:powerline_pycmd="py3"
 set laststatus=2
+
+" Armor files
+let g:GPGPreferArmor=1
+" set the default option
+let g:GPGDefaultRecipients=["me@beachlab.org"]
