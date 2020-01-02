@@ -22,12 +22,10 @@ set ic                " case insensitive search
 call plug#begin('~/.vim/bundle')
 Plug 'jamessan/vim-gnupg'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
 Plug 'ap/vim-css-color'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'ajorgensen/vim-markdown-toc'
 call plug#end()
 
 " key remaps
@@ -54,4 +52,43 @@ let g:GPGPreferArmor=1
 " set the default option
 let g:GPGDefaultRecipients=["me@beachlab.org"]
 
+" gitgutter options
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+set signcolumn=yes
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+
+filetype plugin on
+"Uncomment to override defaults:
+"let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
+
+"
+" Sample command W
+"
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+" Move lines up and down
+"
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 

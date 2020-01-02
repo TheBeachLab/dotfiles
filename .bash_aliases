@@ -13,6 +13,8 @@ alias lsla='lsal'
 alias pacup='sudo pacman -Syu'
 alias yayup='yay -Syu'
 alias vi='vim'
+alias weather='~/go/bin/wego'
+alias worldtime='sh ~/worldtime.sh | lolcat'
 
 # network
 alias online='sudo wifi-menu'
@@ -25,3 +27,12 @@ alias df='df -H'
 # dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# folders
+alias blrep='cd ~/Repositories/Beach\ Lab/'
+alias fabrep='cd ~/Repositories/Fab/'
+alias extrep='cd ~/Repositories/External/'
+alias notesrep='cd ~/Repositories/Beach\ Lab/notes/'
+alias linuxrep='cd ~/Repositories/Beach\ Lab/myComputing/'
+alias bootrep='cd ~/Repositories/Fab/bootcamp-handbook/'
+alias fzrep='cd ~/Repositories/Fab/fabzero/'
+alias modrep='cd ~/Repositories/Fab/mods/'

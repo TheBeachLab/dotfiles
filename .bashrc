@@ -30,6 +30,8 @@ source ~/.bash_aliases
 GPG_TTY=`tty`
 export GPG_TTY
 
+# Flutter Path
+export PATH="$PATH:~/flutterdev/flutter/bin"
 
 # Colorgrid
 function colorgrid( )

@@ -63,6 +63,10 @@ bindsym $mod+d exec rofi -show run -theme Indego -opacity 50 -font "Iosevka Ital
 # Start rofi locate (to search files and folders)
 bindsym Control+$mod+d exec xdg-open "$(locate ~ | rofi -dmenu -theme Indego -font "Iosevka Italic 14" r-i -p "locate:")"
 
+# vim cheatsheet
+bindsym Control+$mod+v exec ~/vimcs.sh
+
+
 ##########
 # Windows
 ##########
