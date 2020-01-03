@@ -36,3 +36,7 @@ alias linuxrep='cd ~/Repositories/Beach\ Lab/myComputing/'
 alias bootrep='cd ~/Repositories/Fab/bootcamp-handbook/'
 alias fzrep='cd ~/Repositories/Fab/fabzero/'
 alias modrep='cd ~/Repositories/Fab/mods/'
+
+# security
+alias killcam='sudo rmod -f uvcvideo'
+alias unkillcam='sudo modprobe uvcvideo'
