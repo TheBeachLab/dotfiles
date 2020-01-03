@@ -38,5 +38,5 @@ alias fzrep='cd ~/Repositories/Fab/fabzero/'
 alias modrep='cd ~/Repositories/Fab/mods/'
 
 # security
-alias killcam='sudo rmod -f uvcvideo'
+alias killcam='sudo rmmod -f uvcvideo'
 alias unkillcam='sudo modprobe uvcvideo'
