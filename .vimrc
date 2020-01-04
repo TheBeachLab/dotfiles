@@ -3,9 +3,9 @@ syntax enable         " enable syntax processing
 colorscheme elflord   " elflord color scheme
 
 " spaces and tabs
-set tabstop=4         " number of spaces by tab
-set softtabstop=4     " number of spaces in tab when editing
-set expandtab         " tabs are spaces
+"set tabstop=4         " number of spaces by tab
+"set softtabstop=4     " number of spaces in tab when editing
+"set expandtab         " tabs are spaces
 
 " UI
 set number            " show line numbers
@@ -24,8 +24,8 @@ Plug 'jamessan/vim-gnupg'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
+Plug 'mzlogin/vim-markdown-toc'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-Plug 'ajorgensen/vim-markdown-toc'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 

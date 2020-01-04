@@ -55,6 +55,11 @@ UXTerm*renderFont: true
 UXTerm*faceName: Iosevka Term
 UXTerm*faceSize: 12
 
+!! Sixel support
+!
+UXTerm*decTerminalID: vt340
+
+
 ! disable bold font faces, instead make text light blue.
 !UXTerm*colorBDMode: true
 !UXTerm*colorBD: rgb:82/a4/d3
