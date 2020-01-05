@@ -46,3 +46,8 @@ else
     echo "Not uploading (Empty commit message)"
 fi
 }
+
+# converts and saves youtube video to mp3
+function yt-mp3() {
+  youtube-dl --extract-audio --audio-format mp3 $1
+}
