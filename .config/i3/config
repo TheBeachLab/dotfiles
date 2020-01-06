@@ -305,5 +305,8 @@ exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id uxterm -b 5 -e "neofetch --ascii_bold off; $SHELL"
 exec --no-startup-id uxterm -b 5
 
+# Write JACK PortAudio device for LightWorks
+exec --no-startup-id ~/Lightworks/setaudiodevices.sh
+
 # Network Manager applet
 #exec --no-startup-id nm-applet
