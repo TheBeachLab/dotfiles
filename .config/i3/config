@@ -2,23 +2,6 @@
 # Arch Linux
 # i3 config file
 
-#########
-# Colors
-#########
-
-# color definitions
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          #bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 ########
 # Fonts
@@ -53,7 +36,7 @@ bindsym $mod+Control+Return exec uxterm -b 10 --role floating_terminal
 for_window [window_role=floating_terminal] floating enable
 
 # kill focused window
-bindsym $mod+c kill
+bindsym $mod+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -theme Indego -opacity 50 -font "Iosevka Italic 14"
@@ -72,24 +55,57 @@ bindsym Control+$mod+v exec ~/vimcs.sh
 ##########
 
 # general settings
-for_window [class="^.*"] border pixel 0
+default_border pixel 2
+default_floating_border pixel 2
+#for_window [class="^.*"] border pixel 1
 #for_window [class="UXTerm"] border pixel 0
 #for_window [class="firefox"] border pixel 0
 #for_window [class="Thunar"] border pixel 0
 #for_window [class="Ntcardvt"] border pixel 0
 #for_window [class="Blender"] border pixel 0
-hide_edge_borders both
-smart_borders on
-gaps inner 12
+#hide_edge_borders both
+#smart_borders on
+gaps inner 10
 gaps outer 0
 
+
+focus_follows_mouse yes
+
 # floating windows
-for_window [class="QjackCtl"] floating enable, resize set 622px 109px
 for_window [window_role="pop-up"] floating enable
 for_window [class="Aeolus"] floating enable
 for_window [instance="vmpk"] floating enable
 for_window [class="Cadence"] floating enable
-#for_window [class="QjackCtl" title="JACK Audio Connection Kit [(default)] Stopped. — QjackCtl"] floating enable, resize set 622px 109px
+
+#########
+# Colors
+#########
+
+# color definitions
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+set $red-color           #FF0000
+set $green-color         #00FF00
+set $orange-color        #fcaf3e
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $red-color #285577 #ffffff $orange-color   $red-color
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+# window colors
+#                       border              background         text                 indicator
+#client.focused          $red-color           $bg-color          $text-color          #00ff00  $bg-color
+#client.unfocused        $red-color  $inactive-bg-color $inactive-text-color #00ff00
+#client.focused_inactive $red-color  $inactive-bg-color $inactive-text-color #00ff00
+#client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
 # move focused window between monitors
@@ -262,7 +278,7 @@ bindsym $mod+Shift+x exec ~/scripts/lock-screen
 # Auto-start programs
 ######################
 # start jack
-exec cadence-session-start --system-start
+#exec cadence-session-start --system-start
 
 # Load .Xresources
 #exec xrdb ~/.Xresources
@@ -289,7 +305,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id fix_xcursor
 
 # Battery Popup
-exec --no-startup-id i3-battery-popup -n
+#exec --no-startup-id i3-battery-popup -n
+
+# Terminal
+exec --no-startup-id uxterm -b 5 -e "neofetch --ascii_bold off; $SHELL"
+exec --no-startup-id uxterm -b 5
 
 #############
 ###### Unused
@@ -301,9 +321,3 @@ exec --no-startup-id i3-battery-popup -n
 # Udiskie
 #exec --no-startup-id udiskie --tray
 
-# Terminal
-exec --no-startup-id uxterm -b 5 -e "neofetch --ascii_bold off; $SHELL"
-exec --no-startup-id uxterm -b 5
-
-# Network Manager applet
-#exec --no-startup-id nm-applet
