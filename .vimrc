@@ -29,9 +29,6 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
-" key remaps
-noremap <SPACE> <C-F> " space to scroll down
-
 " abbreviations
 
 abb faff francisco@fabfoundation.org
@@ -101,4 +98,9 @@ set mouse=a
 "
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(20)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-20)<CR>
+
+" vimopelli the vim kokopelli
+"
+inoremap <F3> <C-o>:w<CR>
+inoremap <F4> <C-o>:w<CR><C-o>:silent ! ./trigger.sh<CR><C-o>:redraw!<CR>
 
