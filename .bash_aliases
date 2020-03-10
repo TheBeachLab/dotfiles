@@ -43,8 +43,10 @@ alias unkillcam='sudo modprobe uvcvideo'
 
 # loopback cam in /dev/video9
 alias loopcam='sudo modprobe v4l2loopback video_nr=9'
-alias loopkill='sudo rmmod v4l2loopback'
 
 # blank screen
 alias blank='sleep 0.2; xset dpms force off'
+
+# nightly build blender
+alias nightblender='/home/unix/opt/blender-git/build_linux/bin/blender'
 
