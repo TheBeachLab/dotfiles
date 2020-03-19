@@ -11,7 +11,6 @@ alias lsl='ls -lh'
 alias lsal='ls -alh'
 alias lsla='lsal'
 alias pacup='sudo pacman -Syu'
-alias yayup='yay -Syu'
 alias vi='vim'
 alias weather='~/go/bin/wego'
 alias worldtime='sh ~/worldtime.sh | lolcat'
@@ -50,3 +49,5 @@ alias blank='sleep 0.2; xset dpms force off'
 # nightly build blender
 alias nightblender='/home/unix/opt/blender-git/build_linux/bin/blender'
 
+# topy alias
+alias beso='python /home/unix/Repositories/Beach\ Lab/engineering/topy/scripts/optimise.py $1'
