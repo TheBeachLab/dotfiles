@@ -50,3 +50,7 @@ alias nightblender='/home/unix/opt/blender-git/build_linux/bin/blender'
 
 # topy alias
 alias beso='python /home/unix/Repositories/Beach\ Lab/engineering/topy/scripts/optimise.py $1'
+
+# connect yeti mic
+alias yetimic='alsa_in -j "Yeti" -d hw:Microphone -q 1 2>&1 1> /dev/null &'
+
