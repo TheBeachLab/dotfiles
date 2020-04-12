@@ -39,12 +39,12 @@ for_window [window_role=floating_terminal] floating enable
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -theme Indego -opacity 50 -font "Iosevka Italic 14"
+bindsym $mod+space exec rofi -show run -theme Indego -opacity 50 -font "Iosevka Italic 14"
 
 # bindsym $mod+d exec rofi -show run -opacity "50" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-colRor" -hlbg "$bg-color" -hlfg "#9575cd" -font "Misc Fixed 10"
 
 # Start rofi locate (to search files and folders)
-bindsym Control+$mod+d exec xdg-open "$(locate ~ | rofi -dmenu -theme Indego -font "Iosevka Italic 14" r-i -p "locate:")"
+bindsym Control+$mod+space exec xdg-open "$(locate ~ | rofi -dmenu -theme Indego -font "Iosevka Italic 14" r-i -p "locate:")"
 
 # vim cheatsheet
 bindsym Control+$mod+v exec ~/vimcs.sh
@@ -76,6 +76,8 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="Aeolus"] floating enable
 for_window [instance="vmpk"] floating enable
 for_window [class="Cadence"] floating enable
+for_window [class="Carla2"] floating enable
+
 
 #########
 # Colors
@@ -152,7 +154,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -250,6 +252,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
 # Screenshot
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots' && dunstify 'Captured screen to ~/Pictures/screenshots'
@@ -285,7 +288,7 @@ exec --no-startup-id cadence-session-start --system-start
 #exec xrdb ~/.Xresources
 
 # Load keyboard layouts
-exec --no-startup-id setxkbmap -layout us,es
+exec --no-startup-id setxkbmap -layout us -variant colemak
 
 # Wallpaper
 exec --no-startup-id feh --bg-scale ~/scripts/spacesurf.png
