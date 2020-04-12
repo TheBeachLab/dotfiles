@@ -34,7 +34,7 @@ function colorgrid( )
 }
 
 # Push this!
-function pushthis()
+function pt()
 {
 if [ "$#" -gt 0 ]
 then
@@ -48,6 +48,6 @@ fi
 }
 
 # converts and saves youtube video to mp3
-function yt-mp3() {
+function yts() {
   youtube-dl --extract-audio --audio-format mp3 $1
 }
