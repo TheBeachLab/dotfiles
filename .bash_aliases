@@ -42,12 +42,16 @@ alias loopcam='sudo modprobe v4l2loopback video_nr=9'
 # blank screen
 alias blank='sleep 0.2; xset dpms force off'
 
-# nightly build blender
-alias nightblender='/home/unix/opt/blender-git/build_linux/bin/blender'
-
 # topy alias
 alias beso='python /home/unix/Repositories/Beach\ Lab/engineering/topy/scripts/optimise.py $1'
 
-# connect yeti mic
+# yeti mic
 alias yetimic='alsa_in -j "Yeti" -d hw:Microphone -q 1 2>&1 1> /dev/null &'
+alias kyeti='pkill alsa_in'
 
+# gpu
+alias igpu='sudo gswitch internal'
+alias egpu='sudo gswitch egpu'
+
+# xplane
+alias fly='~/X-Plane\ 11/X-Plane-x86_64'
