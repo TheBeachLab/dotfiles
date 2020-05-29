@@ -23,17 +23,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec uxterm -b 5 -bdc
 
-# start chrome
+# start firefox
 bindsym Control+$mod+b exec firefox
-
-# start ranger
-#bindsym Control+$mod+r exec ranger
-
-# Start a floating terminal
-bindsym $mod+Control+Return exec uxterm -b 10 --role floating_terminal
-
-# Floating terminal
-for_window [window_role=floating_terminal] floating enable
 
 # kill focused window
 bindsym $mod+q kill
@@ -45,10 +36,6 @@ bindsym $mod+space exec rofi -show run -theme Indego -opacity 50 -font "Iosevka 
 
 # Start rofi locate (to search files and folders)
 bindsym Control+$mod+space exec xdg-open "$(locate ~ | rofi -dmenu -theme Indego -font "Iosevka Italic 14" r-i -p "locate:")"
-
-# vim cheatsheet
-bindsym Control+$mod+v exec ~/vimcs.sh
-
 
 ##########
 # Windows
@@ -124,13 +111,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
+# Use the Shift with the cursor keys to move windows:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -145,22 +126,11 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Alt+space focus mode_toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -208,9 +178,11 @@ set $workspace0 "10:VIDEO"
 assign [class="firefox"] $workspace2
 assign [class="Thunar"] $workspace3
 assign [class="Thunderbird"] $workspace4
-assign [class="Ntcardvt"] $workspace0
+assign [class="Ntcardvt"] $workspace0 # lightworks
 assign [class="Blender"] $workspace6
-
+assign [class="zoom"] $workspace7
+assign [class="obs"] $workspace5
+assign [class="Carla2"] $workspace4
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -260,7 +232,7 @@ bindsym Control+Print exec scrot -u -e 'mv $f ~/Pictures/screenshots' && dunstif
 bindsym Shift+Print exec scrot -e 'mv $f ~/Pictures/screenshots && gthumb ~/Pictures/screenshots/$f'
 
 # keyboard layout
-bindsym $mod+z exec xkb-switch -n # REQUIRES AUR XKB-SWITCH
+#bindsym $mod+z exec xkb-switch -n # REQUIRES AUR XKB-SWITCH
 
 #################################
 # Restart, reboot, logout et al.
@@ -294,7 +266,7 @@ exec --no-startup-id setxkbmap -layout us -variant colemak
 exec --no-startup-id feh --bg-scale ~/scripts/spacesurf.png
 
 # Transparency
-exec --no-startup-id compton -o 0.3 --backend glx --vsync -b -i 1.0 --config ~/.config/i3/compton.conf
+exec --no-startup-id picom --config ~/.config/i3/picom.conf
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -324,4 +296,3 @@ exec --no-startup-id uxterm -b 5
 
 # Udiskie
 #exec --no-startup-id udiskie --tray
-
