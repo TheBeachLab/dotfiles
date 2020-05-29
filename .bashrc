@@ -34,5 +34,5 @@ export GPG_TTY
 export PATH="$PATH:~/flutterdev/flutter/bin"
 
 # Source custom functions
-source .custom_functions.sh
+source ~/.custom_functions.sh
 
