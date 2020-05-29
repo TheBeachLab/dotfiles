@@ -2,6 +2,10 @@
 syntax enable         " enable syntax processing
 colorscheme elflord   " elflord color scheme
 
+" Set the filetype based on the file's extension, overriding any
+" 'filetype' that has already been set
+au BufRead,BufNewFile *.asm set filetype=avra
+
 " spaces and tabs
 "set tabstop=4         " number of spaces by tab
 "set softtabstop=4     " number of spaces in tab when editing
@@ -27,7 +31,10 @@ Plug 'ap/vim-css-color'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'mboughaba/vim-lessmess'
 call plug#end()
+
 
 " abbreviations
 
@@ -103,4 +110,10 @@ noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-20)<CR>
 "
 inoremap <F3> <C-o>:w<CR>
 inoremap <F4> <C-o>:w<CR><C-o>:silent ! ./trigger.sh<CR><C-o>:redraw!<CR>
+
+inoremap <F6> <C-o>:InstantMarkdownPreview<CR>
+
+" jsbeautify
+"
+map <C-s> :call JsBeautify()<CR>
 
