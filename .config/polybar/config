@@ -60,7 +60,7 @@ font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = alsa  backlight filesystem memory cpu wlan eth battery temperature date updates powermenu
+modules-right = backlight filesystem memory cpu wlan eth battery temperature date updates powermenu
 
 tray-position = right
 tray-padding = 2
