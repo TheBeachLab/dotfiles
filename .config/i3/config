@@ -98,12 +98,12 @@ client.background       #ffffff
 
 
 # move focused window between monitors
-bindsym $mod+l move container to output right
-bindsym $mod+k move container to output left
+bindsym $mod+y move container to output right
+bindsym $mod+u move container to output left
 
 # move focused workspace between monitors
-bindsym $mod+Ctrl+l move workspace to output right
-bindsym $mod+Ctrl+k move workspace to output left
+bindsym $mod+Ctrl+y move workspace to output right
+bindsym $mod+Ctrl+u move workspace to output left
 
 # change focus
 bindsym $mod+Left focus left
@@ -140,10 +140,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        #bindsym j resize shrink width 10 px or 10 ppt
+        #bindsym k resize grow height 10 px or 10 ppt
+        #bindsym l resize shrink height 10 px or 10 ppt
+        #bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -254,7 +254,7 @@ bindsym $mod+Shift+x exec ~/scripts/lock-screen
 # Auto-start programs
 ######################
 # start jack
-exec --no-startup-id cadence-session-start --system-start
+#exec --no-startup-id cadence-session-start --system-start
 
 # Load .Xresources
 #exec xrdb ~/.Xresources
