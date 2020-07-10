@@ -229,7 +229,7 @@ bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 # Screenshot
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots' && dunstify 'Captured screen to ~/Pictures/screenshots'
 bindsym Control+Print exec scrot -u -e 'mv $f ~/Pictures/screenshots' && dunstify 'Captured focused window to ~/Pictures/screenshots'
-bindsym Shift+Print exec scrot -e 'mv $f ~/Pictures/screenshots && gthumb ~/Pictures/screenshots/$f'
+bindsym Shift+Print exec dunstify 'Drag region to capture' && sleep 0.2 && scrot -s -e 'mv $f ~/Pictures/screenshots' #  && gthumb ~/Pictures/screenshots/$f'
 
 # keyboard layout
 #bindsym $mod+z exec xkb-switch -n # REQUIRES AUR XKB-SWITCH
