@@ -21,7 +21,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec uxterm -b 5 -bdc
+bindsym $mod+Return exec urxvt -b 5
 
 # start firefox
 bindsym Control+$mod+b exec firefox
@@ -284,8 +284,8 @@ exec --no-startup-id fix_xcursor
 #exec --no-startup-id i3-battery-popup -n
 
 # Terminal
-exec --no-startup-id xterm -b 5 -e "neofetch --ascii_bold off; $SHELL"
-exec --no-startup-id xterm -b 5
+exec --no-startup-id urxvt -b 5 -e "neofetch --ascii_bold off; $SHELL"
+exec --no-startup-id urxvt -b 5
 
 #############
 ###### Unused

@@ -10,7 +10,7 @@
 !! Colorscheme modify at https://terminal.sexy
 
 ! special
-*.foreground:   #dfdfdf 
+*.foreground:   #dfdfdf
 !#8a8986
 *.background:   #28211c
 *.cursorColor:  #c5c8c6
@@ -57,7 +57,7 @@
 
 !! Sixel support
 !
-!UXTerm*decTerminalID: vt340
+!xterm*decTerminalID: vt340
 ! till here
 
 ! disable bold font faces, instead make text light blue.
@@ -67,6 +67,13 @@
 !XTerm.vt100.colorULMode: true
 !XTerm.vt100.colorUL: rgb:e4/e4/e4
 ! similarly use colorIT for italics
+
+! URXVT
+URxvt.scrollBar: false
+URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
+URxvt.fading: 15
+URxvt.depth: 32
+URxvt.background: [50]#000000
 
 Xft.dpi: 96
 Xft.antialias: true
