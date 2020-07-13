@@ -71,7 +71,7 @@
 ! URXVT
 URxvt.scrollBar: false
 URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
-URxvt.fading: 15
+URxvt.fading: 25
 URxvt.depth: 32
 URxvt.background: [50]#000000
 
