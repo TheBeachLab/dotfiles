@@ -57,3 +57,6 @@ alias egpu='sudo gswitch egpu'
 
 # xplane
 alias fly='~/X-Plane\ 11/X-Plane-x86_64 --monitor_bounds=0,0,1920,1080,1920,0,1920,1080,3840,0,1920,1080'
+
+# check staged files 
+alias check='ruby ~/git-diff-size-check.rb'
