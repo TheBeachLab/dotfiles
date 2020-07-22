@@ -31,7 +31,7 @@ IO.popen('git diff-index master').each do |l|
   end
 
   delta_mbytes = bytes_to_mb(delta_bytes)
-    
+
   if delta_mbytes > MAX_FILE_DELTA
     errors << "File '#{filename}' changed size is %0.2f Mbytes. This is larger than the %0.2f Mbytes limit." % [total_delta_mbytes , MAX_TOTAL_DELTA]
   end
