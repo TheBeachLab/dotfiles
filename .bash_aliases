@@ -15,7 +15,7 @@ alias worldtime='sh ~/worldtime.sh | lolcat'
 # network
 alias online='sudo wifi-menu'
 alias cable='sudo ip link set cable0 up && sudo dhcpcd cable0'
-alias cablef='sudo ip link set cable0 up && sudo ip address flush dev cable0 && sudo ip address add 192.168.1.41/24 broadcast + dev cable0 && sudo ip route add default via 192.168.1.1 dev cable0'
+alias cablef='sudo ip link set cable0 up && sudo ip address flush dev cable0 && sudo ip address add 192.168.1.41/24 broadcast + dev cable0 && sudo ip route del default && sudo ip route add default via 192.168.1.1 dev cable0'
 alias nocable='sudo systemctl stop dhcpcd.service && sudo ip link set cable0 down'
 
 alias df='df -H'
