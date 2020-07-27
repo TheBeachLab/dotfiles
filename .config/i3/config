@@ -100,10 +100,16 @@ client.background       #ffffff
 # move focused window between monitors
 bindsym $mod+y move container to output right
 bindsym $mod+u move container to output left
+bindsym $mod+m move container to output down
+bindsym $mod+e move container to output up
+
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+y move workspace to output right
 bindsym $mod+Ctrl+u move workspace to output left
+bindsym $mod+Ctrl+m move workspace  to output down
+bindsym $mod+Ctrl+e move workspace  to output up
+
 
 # change focus
 bindsym $mod+Left focus left
