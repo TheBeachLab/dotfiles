@@ -74,6 +74,7 @@ URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
 URxvt.fading: 25
 URxvt.depth: 32
 URxvt.background: [50]#000000
+URxvt.font: xft:Iosevka Term:style=Regular:size=11
 
 Xft.dpi: 96
 Xft.antialias: true
