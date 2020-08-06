@@ -9,7 +9,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch polybar
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    if [ $m == 'DP-1' ] # center monitor
+    if [ $m == 'DP-1' ] || [ $m == 'eDP-1' ]  # center monitor or just laptop
     then
 	MONITOR=$m polybar --reload archbar-center -c ~/.config/polybar/config &
     elif [ $m == 'DP-3' ]
