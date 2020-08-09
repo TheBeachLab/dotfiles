@@ -69,6 +69,7 @@
 ! similarly use colorIT for italics
 
 ! URXVT
+URxvt.perl-ext-common: font-size
 URxvt.scrollBar: false
 URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
 URxvt.fading: 25
