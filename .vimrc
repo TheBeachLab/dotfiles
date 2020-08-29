@@ -33,6 +33,7 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mboughaba/vim-lessmess'
+Plug 'linduxed/colemak.vim'
 call plug#end()
 
 
@@ -90,12 +91,12 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Move lines up and down
 "
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-u> :m .+1<CR>==
+nnoremap <A-e> :m .-2<CR>==
+inoremap <A-u> <Esc>:m .+1<CR>==gi
+inoremap <A-e> <Esc>:m .-2<CR>==gi
+vnoremap <A-u> :m '>+1<CR>gv=gv
+vnoremap <A-e> :m '<-2<CR>gv=gv
 
 " activate mouse scroll
 "
@@ -103,8 +104,8 @@ set mouse=a
 
 " smooth scroll with mouse
 "
-noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(20)<CR>
-noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-20)<CR>
+"noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(20)<CR>
+"noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-20)<CR>
 
 " vimopelli the vim kokopelli
 "
