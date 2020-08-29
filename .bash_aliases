@@ -62,4 +62,7 @@ alias fly='~/X-Plane\ 11/X-Plane-x86_64 --monitor_bounds=0,0,1920,1080,1920,0,19
 alias check='ruby ~/git-diff-size-check.rb'
 
 # connect to server
-alias pink='ssh -p 622 pink@192.168.1.50'
+alias pink='ssh -p 622 pink@thebeachlab'
+
+# activate dnie reader
+alias dnie='sudo systemctl restart pcscd.socket'
