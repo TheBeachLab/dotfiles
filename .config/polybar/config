@@ -469,8 +469,8 @@ label = %time% %date%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-;sink = alsa_output.pci-0000_00_1f.3.analog-stereo
-sink = jack_out
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+;sink = jack_out
 
 use-ui-max = true
 
@@ -595,7 +595,9 @@ poll-interval = 5
 ; Default: %H:%M:%S
 time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.foreground-alt}
 format-charging-underline = #7AC06E
 label-charging = %percentage:2%%
 
