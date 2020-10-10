@@ -66,3 +66,7 @@ alias pink='ssh -p 622 pink@thebeachlab'
 
 # activate dnie reader
 alias dnie='sudo systemctl restart pcscd.socket'
+
+# check public ip
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+
