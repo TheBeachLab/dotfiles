@@ -64,6 +64,7 @@ for_window [class="Aeolus"] floating enable
 for_window [instance="vmpk"] floating enable
 for_window [class="Cadence"] floating enable
 for_window [class="Carla2"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 
 #########
@@ -96,32 +97,31 @@ client.background       #ffffff
 #client.focused_inactive $red-color  $inactive-bg-color $inactive-text-color #00ff00
 #client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
-
-# move focused window between monitors
-bindsym $mod+y move container to output right
-bindsym $mod+u move container to output left
-bindsym $mod+m move container to output down
-bindsym $mod+e move container to output up
-
-
-# move focused workspace between monitors
-bindsym $mod+Ctrl+y move workspace to output right
-bindsym $mod+Ctrl+u move workspace to output left
-bindsym $mod+Ctrl+m move workspace  to output down
-bindsym $mod+Ctrl+e move workspace  to output up
-
-
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# Use the Shift with the cursor keys to move windows:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# Use the Ctrl with the cursor keys to move windows:
+bindsym $mod+Ctrl+Left move left
+bindsym $mod+Ctrl+Down move down
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Right move right
+
+
+# move focused window between monitors with Shift
+bindsym $mod+Shift+Right move container to output right
+bindsym $mod+Shift+Left move container to output left
+bindsym $mod+Shift+Down move container to output down
+bindsym $mod+Shift+Up move container to output up
+
+
+# move focused workspace between monitors with Alt
+bindsym $mod+Mod1+Right move workspace to output right
+bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+Down move workspace  to output down
+bindsym $mod+Mod1+Up move workspace  to output up
 
 # split in horizontal orientation
 bindsym $mod+h split h
