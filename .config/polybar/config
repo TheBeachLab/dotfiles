@@ -30,6 +30,10 @@ alert = #bd2c40
 alertm2 =
 backgroundm2 =
 
+;;;;;;;;;;;;;
+; CENTRAL BAR
+;;;;;;;;;;;;;
+
 [bar/archbar-center]
 monitor = ${env:MONITOR:}
 width = 100%
@@ -80,6 +84,10 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;;;;;;;;;;
+; LEFT BAR
+;;;;;;;;;;
 
 [bar/archbar-left]
 monitor = ${env:MONITOR:}
@@ -132,6 +140,9 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;;;;;;;;;;;
+; RIGHT BAR
+;;;;;;;;;;;
 
 [bar/archbar-right]
 monitor = ${env:MONITOR:}
@@ -184,7 +195,9 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-
+;;;;;;;;;;;;;;;;;;;;
+; MODULES START HERE
+;;;;;;;;;;;;;;;;;;;;
 
 
 [module/updates]
