@@ -6,21 +6,33 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch polybar
+# Launch polybars
 if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    if [ $m == 'DP-1' ] || [ $m == 'eDP-1' ]  # center monitor or just laptop
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do  # check all connected screens
+    if [ $m == 'eDP-1-1' ] # egpu is connected
     then
-	MONITOR=$m polybar --reload archbar-center -c ~/.config/polybar/config &
-    elif [ $m == 'DP-3' ]
+        # Things to do when egpu is connected
+	xrandr --output DP-1 --primary --auto --output DP-3 --left-of DP-1 --auto --output DP-5 --right-of DP-1 --rotate normal --auto --output eDP-1-1 --below DP-1 --auto # setup 4 screens
+        for k in $(xrandr --query | grep " connected" | cut -d" " -f1); do  # loop again connected screens
+          if [ $k == 'eDP-1-1' ]  # laptop screen
+          then
+	    MONITOR=$m polybar --reload archbar-laptop -c ~/.config/polybar/config &
+          elif [ $k == 'DP-1' ]  # top central monitor
+          then
+	    MONITOR=$k polybar --reload archbar-aux -c ~/.config/polybar/config &
+          else
+	    MONITOR=$k polybar --reload archbar-none -c ~/.config/polybar/config &
+          fi
+        done
+    elif [ $m == 'eDP-1' ]  # no egpu connected
     then
-	MONITOR=$m polybar --reload archbar-left -c ~/.config/polybar/config &
-    else
-	MONITOR=$m polybar --reload archbar-right -c ~/.config/polybar/config &
+        # Things to do when laptop alone
+	MONITOR=$m polybar --reload archbar-laptop -c ~/.config/polybar/config &
     fi
   done
-else
-  polybar --reload archbar-center -c ~/.config/polybar/config &
+
+#else  # any other screen connected which is not xrandr type
+#  polybar --reload archbar-none -c ~/.config/polybar/config &
 fi
 
 echo "Bars launched..."
