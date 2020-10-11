@@ -278,9 +278,6 @@ exec --no-startup-id feh --bg-scale ~/scripts/spacesurf.png
 # Transparency
 exec --no-startup-id picom --config ~/.config/i3/picom.conf
 
-# polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # Notification system
 exec --no-startup-id dunst -conf ~/.dunst/dunstrc
 
@@ -306,3 +303,8 @@ exec --no-startup-id urxvt -b 5
 
 # Udiskie
 #exec --no-startup-id udiskie --tray
+#
+
+# launch polybar at the end
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
