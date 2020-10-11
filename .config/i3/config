@@ -267,13 +267,10 @@ bindsym $mod+Shift+x exec ~/scripts/lock-screen
 #exec --no-startup-id cadence-session-start --system-start
 
 # Load .Xresources
-#exec xrdb ~/.Xresources
-
-# Load keyboard layouts
 exec --no-startup-id setxkbmap -layout us -variant colemak
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/scripts/spacesurf.png
+#exec --no-startup-id feh --bg-scale ~/scripts/spacesurf.png
 
 # Transparency
 exec --no-startup-id picom --config ~/.config/i3/picom.conf
@@ -307,4 +304,3 @@ exec --no-startup-id urxvt -b 5
 
 # launch polybar at the end
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
