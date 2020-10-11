@@ -294,7 +294,7 @@ exec --no-startup-id fix_xcursor
 #exec --no-startup-id i3-battery-popup -n
 
 # Terminal
-exec --no-startup-id urxvt -b 5 #-e "neofetch --ascii_bold off; $SHELL"
+exec --no-startup-id urxvt -b 5 -e bash -c "neofetch --ascii_bold off; $SHELL"
 exec --no-startup-id urxvt -b 5
 
 #############
