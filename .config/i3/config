@@ -190,7 +190,7 @@ assign [class="Thunderbird"] $workspace4
 assign [class="Ntcardvt"] $workspace0 # lightworks
 assign [class="kdenlive"] $workspace0
 assign [class="Blender"] $workspace6
-#assign [class="zoom"] $workspace7
+assign [class="zoom"] $workspace8
 assign [class="obs"] $workspace5
 #assign [class="Carla2"] $workspace4
 
