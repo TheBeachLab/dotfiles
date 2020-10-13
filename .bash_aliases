@@ -70,3 +70,8 @@ alias dnie='sudo systemctl restart pcscd.socket'
 # check public ip
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# autohotkey
+alias autokey='~/Repositories/Beach\ Lab/stream-deck/autohotkey.py'
+
+# music
+alias music='ncmpcpp'

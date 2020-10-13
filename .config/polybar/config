@@ -63,7 +63,7 @@ font-1 = unifont:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = xwindow
+modules-center = mpd xwindow
 modules-right = pulseaudio backlight filesystem memory cpu wlan eth battery temperature date updates powermenu
 
 tray-position = right
