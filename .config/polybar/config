@@ -64,7 +64,7 @@ font-2 = Wuncon Siji:pixelsize=10;1
 font-3 = Weather Icons:size=8:antialias=false;1
 
 
-modules-left = i3 openweathermap
+modules-left = i3 openweathermap redshift
 modules-center = mpd xwindow
 modules-right = pulseaudio backlight filesystem memory cpu wlan eth battery temperature date updates powermenu
 
@@ -201,6 +201,15 @@ cursor-scroll = ns-resize
 ;;;;;;;;;;;;;;;;;;;;
 ; MODULES START HERE
 ;;;;;;;;;;;;;;;;;;;;
+
+[module/redshift]
+type = custom/script
+format-prefix = " "  
+exec = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh temperature 
+click-left = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh toggle 
+scroll-up = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh increase
+scroll-down = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh decrease
+interval=0.5
 
 
 [module/openweathermap]
