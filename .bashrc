@@ -17,6 +17,9 @@ PS1="\[${RED}\][\[${RESET}\]\u \[${YELLOW}\]\w\[${RED}\]]\[${RESET}\]\$ "
 # Xterm transparency
 #[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
+# Define EDITOR
+export EDITOR="/usr/bin/vim"
+
 # Load aliases
 source ~/.bash_aliases
 
@@ -35,4 +38,6 @@ export PATH="$PATH:~/flutterdev/flutter/bin"
 
 # Source custom functions
 source ~/.custom_functions.sh
+
+# nnn environment variables
 
