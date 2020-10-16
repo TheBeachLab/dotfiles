@@ -61,8 +61,10 @@ module-margin-right = 2
 font-0 = MiscFixedSC613:pixelsize=9,1
 font-1 = unifont:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=10;1
+font-3 = Weather Icons:size=8:antialias=false;1
 
-modules-left = i3
+
+modules-left = i3 openweathermap
 modules-center = mpd xwindow
 modules-right = pulseaudio backlight filesystem memory cpu wlan eth battery temperature date updates powermenu
 
@@ -172,6 +174,7 @@ font-0 = MiscFixedSC613:pixelsize=9,1
 font-1 = unifont:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=10;1
 
+
 modules-left = i3
 modules-center = xwindow
 modules-right = filesystem memory cpu wlan eth temperature date
@@ -198,6 +201,13 @@ cursor-scroll = ns-resize
 ;;;;;;;;;;;;;;;;;;;;
 ; MODULES START HERE
 ;;;;;;;;;;;;;;;;;;;;
+
+
+[module/openweathermap]
+type = custom/script
+exec = ~/.config/polybar/openweather.sh
+interval = 600
+label-font = 0
 
 
 [module/updates]
@@ -386,7 +396,7 @@ label-connected = %essid% %signal%Mbps
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% down
+;label-disconnected = %ifname% down
 ;label-disconnected = WLAN off
 label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -412,7 +422,7 @@ format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = ${colors.foreground-alt}
 format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% down
+;label-disconnected = %ifname% down
 label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/screenrecorder]
