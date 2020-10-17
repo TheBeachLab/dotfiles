@@ -64,9 +64,9 @@ font-2 = Wuncon Siji:pixelsize=10;1
 font-3 = Weather Icons:size=8:antialias=false;1
 
 
-modules-left = i3 openweathermap
+modules-left = i3
 modules-center = mpd xwindow
-modules-right = pulseaudio backlight redshift filesystem memory cpu wlan eth battery temperature date updates powermenu
+modules-right = pulseaudio backlight redshift filesystem memory cpu wlan eth battery temperature date openweathermap updates powermenu
 
 tray-position = right
 tray-padding = 2
@@ -220,6 +220,7 @@ type = custom/script
 exec = ~/.config/polybar/openweather.sh
 interval = 600
 label-font = 0
+format-underline = #55aa55
 
 
 [module/updates]
@@ -362,7 +363,7 @@ bar-progress-empty = ─
 
 
 [module/backlight]
-type = internal/xbacklight
+type = internal/backlight
 
 ; for internal/backlight module, read only
 card = intel_backlight
