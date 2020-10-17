@@ -64,9 +64,9 @@ font-2 = Wuncon Siji:pixelsize=10;1
 font-3 = Weather Icons:size=8:antialias=false;1
 
 
-modules-left = i3 openweathermap redshift
+modules-left = i3 openweathermap
 modules-center = mpd xwindow
-modules-right = pulseaudio backlight filesystem memory cpu wlan eth battery temperature date updates powermenu
+modules-right = pulseaudio backlight redshift filesystem memory cpu wlan eth battery temperature date updates powermenu
 
 tray-position = right
 tray-padding = 2
@@ -204,12 +204,15 @@ cursor-scroll = ns-resize
 
 [module/redshift]
 type = custom/script
-format-prefix = " "  
-exec = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh temperature 
-click-left = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh toggle 
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+exec = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh temperature
+click-left = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh toggle
 scroll-up = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh increase
 scroll-down = source ~/.config/polybar/env.sh && ~/.config/polybar/redshift.sh decrease
 interval=0.5
+format-underline = #FAC51C
 
 
 [module/openweathermap]
@@ -287,17 +290,19 @@ label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
+;fuzzy-match = false
 
 ws-icon-0 = 10;
 ws-icon-1 = 1;
-ws-icon-2 = 2;
-ws-icon-3 = 3;
-ws-icon-4 = 4;
-ws-icon-5 = 5;
-ws-icon-6 = 6;
-ws-icon-7 = 7;
-ws-icon-8 = 8;
-ws-icon-9 = 9;
+ws-icon-2 = 2;
+ws-icon-3 = 3;
+ws-icon-4 = 4;
+ws-icon-5 = 5;
+ws-icon-6 = 6;
+ws-icon-7 = 7;
+ws-icon-8 = 8;
+ws-icon-9 = 9;
+ws-icon-default = 
 
 format = <label-state> <label-mode>
 index-sort = true
@@ -312,23 +317,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %icon%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
@@ -357,7 +362,7 @@ bar-progress-empty = ─
 
 
 [module/backlight]
-type = internal/backlight
+type = internal/xbacklight
 
 ; for internal/backlight module, read only
 card = intel_backlight
@@ -693,13 +698,13 @@ ramp-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+expand-right = false
 
 format-spacing = 1
 
-label-open = 
+label-open =
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}

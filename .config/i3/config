@@ -173,16 +173,16 @@ bindsym $mod+r mode "resize"
 #############
 
 # Workspaces variables
-set $workspace1 "1:TERMINAL"
-set $workspace2 "2:WEB"
-set $workspace3 "3:FILES"
-set $workspace4 "4:MAIL"
-set $workspace5 "5:MIX"
-set $workspace6 "6:MIX"
-set $workspace7 "7:MIX"
-set $workspace8 "8:MIX"
-set $workspace9 "9:CODE"
-set $workspace0 "10:VIDEO"
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace0 "10"
 
 # default workspaces (find class with xprop)
 assign [class="firefox"] $workspace2
