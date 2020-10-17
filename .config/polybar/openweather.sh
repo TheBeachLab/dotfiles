@@ -53,7 +53,7 @@ get_duration() {
 }
 
 KEY="9420e5eb9b337922149383c335c3c0b1"
-CITY="Sitges"
+CITY=""
 UNITS="metric"
 SYMBOL="C"
 
@@ -109,5 +109,5 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
         daytime=" $(get_duration "$((sun_rise-now))")"
     fi
 
-    echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
+    echo "$(get_icon "$current_icon") $current_temp$SYMBOL $trend $(get_icon "$forecast_icon") $forecast_temp$SYMBOL $daytime"
 fi
