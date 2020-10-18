@@ -1,25 +1,33 @@
 #!/bin/sh
 
+# color codes
+INDIGO="%{F#4b0082}"
+LGRAY="%{F#a9a9a9}"
+DGRAY="%{F#696969}"
+YELLOW="%{F#ffd700}"
+ORANGE="%{F#ffa500}"
+RST="%{F-}"
+
 get_icon() {
     case $1 in
         # Icons for weather-icons
-        01d) icon="";;
-        01n) icon="";;
-        02d) icon="";;
-        02n) icon="";;
-        03*) icon="";;
-        04*) icon="";;
-        09d) icon="";;
-        09n) icon="";;
-        10d) icon="";;
-        10n) icon="";;
-        11d) icon="";;
+        01d) icon="$YELLOW$RST";; # clear sky day
+        01n) icon="$INDIGO$RST";; # clear sky night
+        02d) icon="";; # few clouds day
+        02n) icon="";; # few clouds night
+        03*) icon="$LGRAY$RST";; # scattered clouds
+        04*) icon="$DGRAY$RST";; # broken clouds
+        09d) icon="";; # shower rain day could be both
+        09n) icon="";; # shower rain night
+	10d) icon="";; # rain ( rain and sun )
+        10n) icon="";; # rain night
+        11d) icon="";; # thunderstorm day and night
         11n) icon="";;
-        13d) icon="";;
+        13d) icon="";; # snow day and night
         13n) icon="";;
-        50d) icon="";;
+        50d) icon="";; # mist
         50n) icon="";;
-        *) icon="";
+        *) icon=""; # ??? wilcard?
 
         # Icons for Font Awesome 5 Pro
         #01d) icon="";;
@@ -101,12 +109,12 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     sun_set=$(echo "$current" | jq ".sys.sunset")
     now=$(date +%s)
 
-    if [ "$sun_rise" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_rise-now))")"
+    if [ "$sun_rise" -gt "$now" ]; then 
+        daytime="$ORANGE$RST $(get_duration "$((sun_rise-now))")"
     elif [ "$sun_set" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_set-now))")"
+        daytime="$ORANGE$RST $(get_duration "$((sun_set-now))")"
     else
-        daytime=" $(get_duration "$((sun_rise-now))")"
+        daytime="$ORANGE$RST $(get_duration "$((sun_rise-now))")"
     fi
 
     echo "$(get_icon "$current_icon") $current_temp$SYMBOL $trend $(get_icon "$forecast_icon") $forecast_temp$SYMBOL  $daytime"
