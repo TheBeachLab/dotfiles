@@ -27,8 +27,8 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-alertm2 =
-backgroundm2 =
+alertm2 = 
+backgroundm2 = HotPink
 
 ;;;;;;;;;;
 ; MAIN BAR
@@ -66,7 +66,7 @@ font-3 = Weather Icons:size=8:antialias=false;1
 
 modules-left = i3
 modules-center = mpd xwindow
-modules-right = pulseaudio backlight redshift filesystem memory cpu wlan eth battery temperature date openweathermap updates powermenu
+modules-right = pulseaudio backlight redshift filesystem memory cpu temperature wlan eth battery date openweathermap updates powermenu
 
 tray-position = right
 tray-padding = 2
@@ -220,7 +220,8 @@ type = custom/script
 exec = ~/.config/polybar/openweather.sh
 interval = 600
 label-font = 0
-format-underline = #55aa55
+format-underline = #ff69b4
+;#55aa55
 
 
 [module/updates]
