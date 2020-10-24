@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # color codes
-INDIGO="%{F#4b0082}"
+CYAN="%{F#00ffff}"
 LGRAY="%{F#a9a9a9}"
 DGRAY="%{F#696969}"
 YELLOW="%{F#ffd700}"
@@ -12,20 +12,20 @@ get_icon() {
     case $1 in
         # Icons for weather-icons
         01d) icon="$YELLOW$RST";; # clear sky day
-        01n) icon="$INDIGO$RST";; # clear sky night
-        02d) icon="";; # few clouds day
-        02n) icon="";; # few clouds night
+        01n) icon="$CYAN$RST";; # clear sky night
+        02d) icon="$LGRAY$RST";; # few clouds day
+        02n) icon="$LGRAY$RST";; # few clouds night
         03*) icon="$LGRAY$RST";; # scattered clouds
         04*) icon="$DGRAY$RST";; # broken clouds
-        09d) icon="";; # shower rain day could be both
-        09n) icon="";; # shower rain night
-	10d) icon="";; # rain ( rain and sun )
-        10n) icon="";; # rain night
-        11d) icon="";; # thunderstorm day and night
+        09d) icon="$DGRAY$RST";; # shower rain day could be both
+        09n) icon="$DGRAY$RST";; # shower rain night
+	10d) icon="$YELLOW$RST";; # rain ( rain and sun )
+        10n) icon="$CYAN$RST";; # rain night
+        11d) icon="$DGRAY$RST";; # thunderstorm day and night
         11n) icon="";;
-        13d) icon="";; # snow day and night
+        13d) icon="$CYAN$RST";; # snow day and night
         13n) icon="";;
-        50d) icon="";; # mist
+        50d) icon="$CYAN$RST";; # mist
         50n) icon="";;
         *) icon=""; # ??? wilcard?
 
