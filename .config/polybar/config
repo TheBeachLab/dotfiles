@@ -65,7 +65,7 @@ font-3 = Weather Icons:size=8:antialias=false;1
 
 
 modules-left = i3
-modules-center = mpd xwindow
+modules-center = xwindow mpd
 modules-right = pulseaudio backlight redshift filesystem memory cpu temperature wlan eth battery date openweathermap updates powermenu
 
 tray-position = right
