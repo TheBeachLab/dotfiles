@@ -1,6 +1,24 @@
+# include global config
 .include /etc/pulse/default.pa
-unload-module module-suspend-on-idle
-update-sink-proplist alsa_output.pci-0000_00_1f.3.analog-stereo device.description="Internal Output"
-update-source-proplist alsa_input.pci-0000_00_1f.3.analog-stereo device.description="Monitor of Internal Output"
-update-source-proplist alsa_output.pci-0000_00_1f.3.analog-stereo.monitor device.description="Monitor of Internal Output"
 
+# no energy saving
+unload-module module-suspend-on-idle
+
+# rename internal speakers/headphones
+update-sink-proplist alsa_output.pci-0000_00_1f.3.analog-stereo device.description="Internal Speakers/Headphones"
+
+# rename monitor of internal mic/jack
+update-source-proplist alsa_input.pci-0000_00_1f.3.analog-stereo device.description="Internal Mic/Jack"
+
+# rename monitor of internal speakers/headphones
+update-source-proplist alsa_output.pci-0000_00_1f.3.analog-stereo.monitor device.description="Monitor of Internal Speakers/Headphones"
+
+# null sink
+.ifexists module-null-sink.so
+load-module module-null-sink sink_name=Source
+.endif
+
+# virtual source
+.ifexists module-virtual-source.so
+load-module module-virtual-source source_name=VirtualMic master=Source.monitor
+.endif
