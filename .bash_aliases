@@ -14,9 +14,9 @@ alias worldtime='sh ~/worldtime.sh | lolcat'
 
 # network
 alias online='sudo wifi-menu'
-alias cable='sudo ip link set cable0 up && sudo dhcpcd cable0'
-alias cablef='sudo ip link set cable0 up && sudo ip address flush dev cable0 && sudo ip address add 192.168.1.41/24 broadcast + dev cable0 && sudo ip route add default via 192.168.1.1 dev cable0' # sudo ip route del default 
-alias nocable='sudo systemctl stop dhcpcd.service && sudo ip link set cable0 down'
+alias cable='sudo netctl stop-all && sudo netctl start ethernet-dhcp'
+alias cablef='sudo netctl stop-all && sudo netctl start ethernet-static' 
+alias nocable='sudo netctl stop-all'
 
 alias df='df -H'
 
@@ -62,7 +62,8 @@ alias fly='~/X-Plane\ 11/X-Plane-x86_64 --monitor_bounds=0,0,1920,1080,1920,0,19
 alias check='ruby ~/git-diff-size-check.rb'
 
 # connect to server
-alias pink='ssh -p 622 pink@thebeachlab'
+alias pink='ssh -p 622 pink@beachlab.org'
+alias githome='ssh -p 622 git@beachlab.org'
 
 # activate dnie reader
 alias dnie='sudo systemctl restart pcscd.socket'
