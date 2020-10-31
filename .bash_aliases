@@ -14,8 +14,8 @@ alias worldtime='sh ~/worldtime.sh | lolcat'
 
 # network
 alias online='sudo wifi-menu'
-alias cable='sudo netctl stop-all && sudo netctl start ethernet-dhcp'
-alias cablef='sudo netctl stop-all && sudo netctl start ethernet-static' 
+alias cable='sudo netctl start ethernet-dhcp'
+alias cablef='sudo netctl start ethernet-static' 
 alias nocable='sudo netctl stop-all'
 
 alias df='df -H'
