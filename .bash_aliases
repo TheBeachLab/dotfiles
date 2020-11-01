@@ -17,7 +17,7 @@ alias online='sudo wifi-menu'
 alias cable='sudo netctl start ethernet-dhcp'
 alias cablef='sudo netctl start ethernet-static' 
 alias nocable='sudo netctl stop-all'
-alias wifi0='sudo netctl start wifi0-home'⎋
+alias wifihome='sudo netctl start wifi0-home'
 alias nfs='~/scripts/synology-mount'
 
 alias df='df -H'

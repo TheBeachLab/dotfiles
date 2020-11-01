@@ -33,21 +33,9 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mboughaba/vim-lessmess'
-Plug 'linduxed/colemak.vim'
+"Plug 'linduxed/colemak.vim'
 call plug#end()
 
-
-" abbreviations
-
-abb faff francisco@fabfoundation.org
-abb habl hola@beachlab.org
-abb mapt me@partytonight.co.uk
-abb sagc seacrets@gmail.com
-abb fahx francisco@hexxan.com
-abb fl Fab Lab
-abb fls Fab Labs
-abb tbl The Beach Lab
-abb tabl The (awesome) Beach Lab
 
 " powerline settings
 let g:powerline_pycmd="py3"
@@ -91,8 +79,8 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Move lines up and down
 "
-nnoremap <A-u> :m .+1<CR>==
 nnoremap <A-e> :m .-2<CR>==
+nnoremap <A-u> :m .+1<CR>==
 inoremap <A-u> <Esc>:m .+1<CR>==gi
 inoremap <A-e> <Esc>:m .-2<CR>==gi
 vnoremap <A-u> :m '>+1<CR>gv=gv
@@ -107,11 +95,9 @@ set mouse=a
 "noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(20)<CR>
 "noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-20)<CR>
 
-" vimopelli the vim kokopelli
+" F KEYS
 "
 inoremap <F3> <C-o>:w<CR>
-inoremap <F4> <C-o>:w<CR><C-o>:silent ! ./trigger.sh<CR><C-o>:redraw!<CR>
-
 inoremap <F6> <C-o>:InstantMarkdownPreview<CR>
 
 " jsbeautify
