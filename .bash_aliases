@@ -39,7 +39,7 @@ alias unkillcam='sudo modprobe uvcvideo'
 
 # loopback cam in /dev/video9
 alias loopcam='sudo modprobe -r v4l2loopback && sudo modprobe v4l2loopback devices=2 video_nr=10,20 card_label=TimerCam,StreamCam'
-alias fixloopcam='sh ~/rebuild.sh'
+alias fixloopcam='scripts/rebuild-v4l2loopcam'
 
 # blank screen
 alias blank='sleep 0.2; xset dpms force off'
