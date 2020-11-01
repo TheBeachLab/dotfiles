@@ -39,5 +39,3 @@ export PATH="$PATH:~/flutterdev/flutter/bin"
 # Source custom functions
 source ~/.custom_functions.sh
 
-# nnn environment variables
-
