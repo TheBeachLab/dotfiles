@@ -13,5 +13,5 @@ y|Y)
 	;;
 esac
 echo
-echo 'Returning to'
-cd -
+echo 'Returning to home'
+cd
