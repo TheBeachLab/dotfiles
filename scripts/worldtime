@@ -1,0 +1,15 @@
+#!/bin/bash
+# Command-line world clock
+
+TIME_ZONES="America/Los_Angeles America/Chicago America/New_York America/Lima America/Bogota America/Santiago Europe/London Europe/Madrid Africa/Cairo Africa/Nairobi Asia/Jerusalem Asia/Amman Asia/Riyadh Asia/Qatar Asia/Dubai Asia/Karachi Asia/Kolkata Asia/Thimphu Asia/Taipei Asia/Shanghai Asia/Seoul Asia/Tokyo Pacific/Auckland"
+OUTPUT=""
+
+for loc in $TIME_ZONES; do
+    CITY=`echo $loc | sed 's/\// /g' | awk '{ print $2 }'`
+    CUR_TIME=`TZ=${loc} date +"%a %b %d %R" | awk '{ print $1 " " $2 " " $3 " " $4 }'`
+    TEMP=`awk -v l="$CITY" -v t="$CUR_TIME" 'BEGIN { print l "\t" t }'`
+    OUTPUT="${OUTPUT}\n${TEMP}"
+done
+
+echo -e $OUTPUT | column -t | tr '_' ' '
+

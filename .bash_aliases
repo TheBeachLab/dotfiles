@@ -10,7 +10,7 @@ alias lsl='ls -lh'
 alias lsal='ls -alh'
 alias lsla='lsal'
 alias vi='vim'
-alias worldtime='sh ~/worldtime.sh | lolcat'
+alias wt='~/scripts/worldtime | lolcat'
 
 # network
 alias online='sudo wifi-menu'
@@ -47,10 +47,6 @@ alias blank='sleep 0.2; xset dpms force off'
 # topy alias
 alias beso='python /home/unix/Repositories/Beach\ Lab/engineering/topy/scripts/optimise.py $1'
 
-# yeti mic
-alias yetimic='alsa_in -j "Yeti" -d hw:Microphone -q 1 2>&1 1> /dev/null &'
-alias kyeti='pkill alsa_in'
-
 # gpu
 alias igpu='sudo gswitch internal'
 alias egpu='sudo gswitch egpu'
@@ -59,7 +55,7 @@ alias egpu='sudo gswitch egpu'
 alias fly='~/X-Plane\ 11/X-Plane-x86_64 --monitor_bounds=0,0,1920,1080,1920,0,1920,1080,3840,0,1920,1080'
 
 # check staged files 
-alias check='ruby ~/git-diff-size-check.rb'
+alias check='~/scripts/git-diff-size-check'
 
 # connect to server
 alias pink='ssh -p 622 pink@beachlab.org'
@@ -73,6 +69,9 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # autohotkey
 alias autokey='~/Repositories/Beach\ Lab/stream-deck/autohotkey.py'
+
+# archconf
+alias arch='~/scripts/archconf'
 
 # music
 alias music='ncmpcpp'

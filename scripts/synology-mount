@@ -1,0 +1,8 @@
+#!/bin/bash
+sudo mount 192.168.1.100:/volume1/Biblioteca /mnt/biblioteca
+sudo mount 192.168.1.100:/volume1/Uploads /mnt/uploads
+sudo mount 192.168.1.100:/volume1/video /mnt/video
+sudo mount 192.168.1.100:/volume1/web /mnt/web
+sudo mount 192.168.1.100:/volume1/photo /mnt/photo
+sudo mount 192.168.1.100:/volume1/music /mnt/music
+
