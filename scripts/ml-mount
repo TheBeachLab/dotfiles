@@ -1,0 +1,30 @@
+#!/bin/bash
+#-----------------------------------------------------------
+remotedir="ml@beachlab.org:/home/ml/"  # TODO Add directory on the remote machine
+mountdir="/mnt/ml"   # TODO Add local directory
+echo "Mounting (${mountdir})..."
+
+if [ -d "${mountdir}" ]; then
+  #Unmount if it's already mounted
+  if mount | grep "on $mountdir" > /dev/null; then
+    echo "Already mounted, unmounting first."  
+    sudo mount ${mountdir}
+  fi
+else
+  sudo mkdir ${mountdir}
+  echo "test1"
+fi
+#Now mount the remote file system
+#   (The -o workaround=rename -o noexec are used so kwrite can save files.)
+sudo sshfs -p 622 -o allow_other,workaround=rename,noexec,idmap=user,uid=$(id -u),gid=$(id -g),default_permissions,IdentityFile=/home/unix/.ssh/id_rsa ${remotedir} ${mountdir}
+echo "test2"
+
+#Sleep 1 second to give it time to register, then check that it is now mounted
+sleep 1s
+if mount | grep "on $mountdir" > /dev/null; then
+  echo "Success"
+  cd ${mountdir}
+else
+  echo "Failure!"
+fi
+# exit 0
