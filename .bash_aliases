@@ -62,7 +62,7 @@ alias check='~/scripts/git-diff-size-check'
 # connect to server
 alias pink='ssh -p 622 pink@beachlab.org'
 alias githome='ssh -p 622 git@beachlab.org'
-alias ml='ssh -p 622 -L 8899:localhost:8899 ml@beachlab.org'
+alias ml='ssh -p 622 -CNL 8899:localhost:8899 ml@beachlab.org'
 
 # activate dnie reader
 alias dnie='sudo systemctl restart pcscd.socket'
