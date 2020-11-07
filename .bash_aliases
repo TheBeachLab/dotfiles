@@ -60,6 +60,7 @@ alias fly='~/X-Plane\ 11/X-Plane-x86_64 --monitor_bounds=0,0,1920,1080,1920,0,19
 alias check='~/scripts/git-diff-size-check'
 
 # connect to server
+alias serverup='wol 4c:cc:6a:88:85:b3'
 alias pink='ssh -p 622 pink@beachlab.org'
 alias githome='ssh -p 622 git@beachlab.org'
 alias ml='ssh -p 622 -CL 8899:localhost:8899 ml@beachlab.org'
