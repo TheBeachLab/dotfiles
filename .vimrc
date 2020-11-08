@@ -78,13 +78,13 @@ let g:instant_markdown_autoscroll = 1
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Move lines up and down
-"
-nnoremap <A-e> :m .-2<CR>==
-nnoremap <A-u> :m .+1<CR>==
-inoremap <A-u> <Esc>:m .+1<CR>==gi
-inoremap <A-e> <Esc>:m .-2<CR>==gi
-vnoremap <A-u> :m '>+1<CR>gv=gv
-vnoremap <A-e> :m '<-2<CR>gv=gv
+" Alt is  you can make it with control-v then control-[
+nnoremap <up> :m .-2<CR>==
+nnoremap <down> :m .+1<CR>==
+inoremap <down> <Esc>:m .+1<CR>==gi
+inoremap <up> <Esc>:m .-2<CR>==gi
+vnoremap <down> :m '>+1<CR>gv=gv
+vnoremap <up> :m '<-2<CR>gv=gv
 
 " activate mouse scroll
 "
