@@ -13,7 +13,7 @@ au BufRead,BufNewFile *.asm set filetype=avra
 
 " UI
 set number            " show line numbers
-set cursorline        " hihglight current line 
+set cursorline        " hihglight current line
 set wildmenu          " visual autocomplete for command menu
 set showmatch         " highlight matching [{()}]
 
@@ -103,4 +103,3 @@ inoremap <F6> <C-o>:InstantMarkdownPreview<CR>
 " jsbeautify
 "
 map <C-s> :call JsBeautify()<CR>
-
