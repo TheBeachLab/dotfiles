@@ -79,3 +79,6 @@ alias arch='~/scripts/archconf'
 
 # music
 alias music='ncmpcpp'
+
+# connect yeti mic
+alias yetimic='alsa_in -j "Yeti" -d hw:Microphone -q 1 2>&1 1> /dev/null &'
