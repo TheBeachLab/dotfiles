@@ -33,8 +33,15 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mboughaba/vim-lessmess'
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'} 
 "Plug 'linduxed/colemak.vim'
 call plug#end()
+
+
+" latex live preview options
+let g:livepreview_previewer='zathura'
+let g:livepreview_cursorhold_recompile = 0
 
 
 " powerline settings
@@ -99,6 +106,8 @@ set mouse=a
 "
 inoremap <F3> <C-o>:w<CR>
 inoremap <F6> <C-o>:InstantMarkdownPreview<CR>
+inoremap <F7> <C-o>:LLPStartPreview<CR>
+
 
 " jsbeautify
 "
