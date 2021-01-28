@@ -58,6 +58,10 @@
 !! Sixel support
 !
 !xterm*decTerminalID: vt340
+
+
+xterm*allowWindowOps: true
+
 ! till here
 
 ! disable bold font faces, instead make text light blue.
