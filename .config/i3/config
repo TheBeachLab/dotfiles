@@ -303,3 +303,6 @@ exec --no-startup-id urxvt -b 5
 
 # launch polybar at the end
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# restore alsamixer levels
+exec --no-startup-id sudo alsactl restore
