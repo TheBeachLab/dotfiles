@@ -364,10 +364,14 @@ bar-progress-empty = ─
 
 
 [module/backlight]
-type = internal/backlight
+type = internal/xbacklight
+
+; for internal/xbacklight module
+;output = eDP-1
+
 
 ; for internal/backlight module, read only
-card = intel_backlight
+;card = intel_backlight
 
 format = <label> <bar>
 label = BL
@@ -407,7 +411,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid% %signal%Mbps
+label-connected = %essid% %signal%%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
