@@ -69,7 +69,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="BasicWin"] floating enable
-
+for_window [instance="xmag"] floating enable
 
 #########
 # Colors
@@ -228,8 +228,8 @@ bindsym $mod+p workspace next
 ###############
 
 # Screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 
 # Sound control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
