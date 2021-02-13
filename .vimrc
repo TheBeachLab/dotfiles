@@ -1,6 +1,6 @@
 " color
 syntax enable         " enable syntax processing
-colorscheme elflord   " elflord color scheme
+colorscheme murphy    " murphy color scheme /usr/share/vim/vim82/colors
 
 " Set the filetype based on the file's extension, overriding any
 " 'filetype' that has already been set
@@ -34,7 +34,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mboughaba/vim-lessmess'
 Plug 'lervag/vimtex'
-Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'} 
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
 "Plug 'linduxed/colemak.vim'
 call plug#end()
 
